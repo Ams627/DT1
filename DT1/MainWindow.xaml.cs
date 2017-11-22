@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media;
 
 namespace DT1
 {
@@ -27,10 +26,8 @@ namespace DT1
             for (var i = 0; i < items.Count; ++i)
             {
                 var item = (UIElement)icontrol1.ItemContainerGenerator.ContainerFromIndex(i);
-                var cp2 = VisualTreeHelper.GetChild
                 if (item is ContentPresenter cp)
                 {
-                    cp.ApplyTemplate();
                     var template = cp.ContentTemplate;
                     System.Diagnostics.Debug.WriteLine($"template is {template?.ToString() ?? "NULL"}");
                 }
