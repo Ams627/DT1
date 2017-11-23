@@ -4,8 +4,5 @@
              xmlns:local="clr-namespace:DT1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type local:X}">
-            <TextBlock Text="Hello World"/>
-        </DataTemplate>
     </Application.Resources>
 </Application>

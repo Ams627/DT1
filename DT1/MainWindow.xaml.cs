@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace DT1
 {
@@ -11,12 +12,12 @@ namespace DT1
 
     public partial class MainWindow : Window
     {
-        public List<X> List { get; set; } = new List<X>();
+        public List<X> MyList { get; set; } = new List<X>();
         public MainWindow()
         {
             InitializeComponent();
-            List.Add(new X());
-            List.Add(new X());
+            MyList.Add(new X());
+            MyList.Add(new X());
             this.DataContext = this;
         }
 
@@ -25,7 +26,8 @@ namespace DT1
             var items = icontrol1.Items;
             for (var i = 0; i < items.Count; ++i)
             {
-                var item = (UIElement)icontrol1.ItemContainerGenerator.ContainerFromIndex(i);
+                var item = icontrol1.ItemContainerGenerator.ContainerFromIndex(i);
+
                 if (item is ContentPresenter cp)
                 {
                     var template = cp.ContentTemplate;
