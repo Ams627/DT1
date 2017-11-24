@@ -4,14 +4,11 @@
         xmlns:local="clr-namespace:DT1"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type local:X}">
-            <TextBlock Text="Hello, World!"/>
-        </DataTemplate>
     </Window.Resources>
     <Grid>
         <StackPanel>
             <Button Content="Press me" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <ItemsControl x:Name="icontrol1" ItemsSource="{Binding List}" HorizontalAlignment="Left"/>
+            <ItemsControl x:Name="icontrol1" HorizontalAlignment="Left"/>
         </StackPanel>
     </Grid>
 </Window>

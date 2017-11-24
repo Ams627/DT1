@@ -23,6 +23,14 @@ namespace DT1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var key = new System.Windows.DataTemplateKey(typeof(X));
+            var dataTemplate = (DataTemplate)this.FindResource(key);
+            if (dataTemplate != null)
+            {
+                var tc = dataTemplate.LoadContent().GetType();
+                System.Console.WriteLine();
+            }
+
             var items = icontrol1.Items;
             for (var i = 0; i < items.Count; ++i)
             {
@@ -33,6 +41,7 @@ namespace DT1
                     var template = cp.ContentTemplate;
                     System.Diagnostics.Debug.WriteLine($"template is {template?.ToString() ?? "NULL"}");
                 }
+
             }
         }
     }
